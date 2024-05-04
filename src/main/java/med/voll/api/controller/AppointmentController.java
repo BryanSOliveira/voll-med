@@ -1,5 +1,6 @@
 package med.voll.api.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.voll.api.domain.appointment.AppointmentDetailsData;
 import med.voll.api.domain.appointment.AppointmentSchedule;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("appointments")
+@SecurityRequirement(name = "bearer-key")
 public class AppointmentController {
 
   @Autowired
